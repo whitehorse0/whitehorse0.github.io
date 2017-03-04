@@ -69,7 +69,9 @@ a {
 }
 
 a:hover {
-    color: #000;
+    opacity: 0.65;
+	outline-width: 0;
+	cursor: pointer;
 }
 
 header {
@@ -117,11 +119,6 @@ header {
     color: #111;
     border: 1.5px solid #FF8A80;
 }
-
-
-
-
-
 
 /* Styles to help demonstrate the grid */
 
@@ -183,6 +180,72 @@ pre[class*='language-'], code[class*='language-'] {
 p code {
     display: inline-block;
     margin-top: 5px;
+}
+
+.margin-bottom {
+	margin-bottom: 45px;
+}
+
+/* Styles to help article */
+
+.above-title .entry-dateline::after {
+    content: '\00B7';
+    padding: 0 .5em;
+}
+
+article header h1 a {
+    color: #7AC9ED;
+}
+
+a.dateline {
+	font-size: 14px;
+	color: rgba(26,26,26,.4);
+}
+
+.sitewrapper {
+	font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+	line-height: 1.6em;
+	font-family: "proxima-nova";
+	font-size: 16px;
+	line-height: 1.8em;
+	letter-spacing: 0px;
+	font-weight: 400;
+	font-style: normal;
+	color: rgba(26,26,26,.6);
+	margin-bottom: 30px;
+}
+.entry-header {
+	margin-bottom: 20px;
+}
+
+.entry-dateline {
+	display: inline;
+	color: rgba(26,26,26,.4);
+}
+
+h1.entry-title {
+	font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 38px;
+	font-family: "adobe-garamond-pro";
+	font-size: 34px;
+	line-height: 1.2em;
+	text-transform: none;
+	letter-spacing: 0px;
+	font-weight: 400;
+	font-style: normal;
+	margin: 5px 0;
+}
+
+.entry-title {
+	margin: 5px 0;
+}
+
+.entry-content-paragraf {
+	color: rgba(26,26,26,.9);
+	font-size: 24px;
+	letter-spacing: normal;
+	line-height: 1.45;
+	text-transform: none;
 }
 
 .commit-branch-wrap {

@@ -22,7 +22,7 @@ img {
 .row {
   display: block;
   margin: 0 auto;
-  max-width: 1024px;
+  max-width: 1234px;
   overflow: hidden;
   *zoom: 1;
 }
@@ -346,6 +346,7 @@ img {
     padding-left: 20px;
     padding-right: 20px;
     width: 100% !important;
+	text-align: center;
   }
   .column .row .column,
   .column .row .columns,
