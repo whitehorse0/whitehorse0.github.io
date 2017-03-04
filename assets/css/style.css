@@ -1,0 +1,227 @@
+*
+{
+    -webkit-transition: all .25s ease-in-out;
+       -moz-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out ;
+}
+
+
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 85%;
+    color: #4b5554;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+	/* background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%); */
+}
+
+body.noScroll {
+  overflow: hidden;
+}
+
+#whitehorse0 {
+	font-family:Courier;
+	text-align:center;
+	-moz-user-select: none;
+}
+
+#whitehorse0:hover {
+	filter: invert(100%);
+}
+
+.cover-banner {
+	position: relative;
+    width: 100%;
+    min-height: 150px;
+	margin: 0;
+    padding: 0;
+	opacity: 0.7;
+	background: url('../img/index.jpg');
+	color: #fff;
+	font-family: 'Segoe UI', Tahoma, Segoe UI, Arial, sans-serif;
+	font-size: 14px;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+nav li {
+    display: inline-block;
+    list-style: none;
+}
+
+
+.nav-main,
+.nav-credits {
+    float: right;
+}
+
+.nav-main li,
+.nav-credits li {
+    margin-left: 1.85em;
+}
+
+.spotlight {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #69706f;
+	word-wrap: break-word;
+}
+
+a:hover {
+    color: #000;
+}
+
+header {
+    padding: 0;
+}
+
+.spotlight h1 {
+    font-size: 2.5em;
+    font-weight: 100;
+    margin-bottom: 1em;
+}
+.spotlight h1 strong {
+    display: inline;
+    font-weight: 500;
+}
+
+.spotlight h2 {
+    font-size: 1.25em;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin-bottom: 5em;
+}
+
+.spotlight-image {
+    margin: 8em 0 10em;
+    padding: 0;
+}
+.social li {
+    float: left;
+    margin-right: 1em;
+}
+.logo {
+    display: block;
+    padding: .5em 0;
+}
+.nav-main li a {
+    display: block;
+    padding: .5em 1.5em;
+    border: 1.5px solid #15cab8;
+    border-radius: 60px;
+}
+
+
+.nav-main li a:hover {
+    color: #111;
+    border: 1.5px solid #FF8A80;
+}
+
+
+
+
+
+
+/* Styles to help demonstrate the grid */
+
+code,
+pre {
+    font-family: 'Source Code Pro', Consolas, Menlo, Monaco, monospace;
+    padding: 3px;
+    color: #333;
+    border-radius: 5px;
+    background: #E0F2F1;
+}
+
+pre {
+    padding: 10px;
+    text-align: center;
+	white-space: pre-line;
+}
+
+pre[class*='language-'], code[class*='language-'] {
+	white-space: pre-line;
+}
+
+.demo p {
+    margin: 0;
+}
+
+.demo .column pre {
+    margin: 0;
+    padding: 20px 0;
+    -webkit-transition: all .2s ease-in-out;
+       -moz-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+}
+
+.demo .column pre:hover {
+    background: #A7FFEB;
+}
+
+.grid,
+.column {
+    -webkit-transition: all .25s ease-in-out;
+       -moz-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+}
+
+.demo .column .grid {
+    overflow: hidden;
+    background: rgba(241,227,213,.5);
+}
+
+.demo .column .row:first-child {
+    border-radius: 5px 5px 0 0;
+}
+
+.demo .column .row:last-child {
+    border-radius: 0 0 5px 5px;
+}
+
+p code {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.commit-branch-wrap {
+	max-width:690px;
+	position:relative;
+}
+
+.commit-branch {
+	position: relative;
+	height: 24px;
+	display: inline-block;
+	top: 7px;
+	padding: 0 7px;
+	background: #444;
+	background: -moz-linear-gradient(#444, #222);
+	background: -webkit-linear-gradient(#444, #222);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444',endColorstr='#222222')";
+	border: 1px solid black;
+	border-radius: 3px;
+	color: #fff;
+	font-family: Consolas,"Liberation Mono",Courier,monospace;
+	font-size: 13px;
+	line-height: 24px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	vertical-align: top;
+	z-index: 100;
+	
+	max-width: 125px;
+	transition: .2s max-width linear;
+	-o-transition: .2s max-width linear;
+	-moz-transition: .2s max-width linear;
+	-webkit-transition: .2s max-width linear;
+	-ms-transition: .2s max-width linear;
+}
+
+/* Transition to complete width! */
+.commit-branch:hover, .commit-branch:active {
+	max-width: inherit;
+	color: #fff;
+}
