@@ -5,7 +5,6 @@
             transition: all .25s ease-in-out ;
 }
 
-
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 85%;
@@ -74,6 +73,14 @@ a:hover {
 	cursor: pointer;
 }
 
+hr.style {
+	border: 0; 
+	height: 0; 
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
+	width: 96% !important;
+}
+
 header {
     padding: 0;
 }
@@ -114,7 +121,6 @@ header {
     border-radius: 60px;
 }
 
-
 .nav-main li a:hover {
     color: #111;
     border: 1.5px solid #FF8A80;
@@ -128,7 +134,7 @@ pre {
     padding: 3px;
     color: #333;
     border-radius: 5px;
-    background: #E0F2F1;
+    /* background: #E0F2F1; */
 }
 
 pre {
@@ -139,6 +145,24 @@ pre {
 
 pre[class*='language-'], code[class*='language-'] {
 	white-space: pre-line;
+}
+
+pre.javascript {
+	background: #fbcd6b;
+	color: #fff;
+	opacity: 0.8;
+}
+
+pre.html {
+	background: #59bbe7;
+	color: #fff;
+	opacity: 0.8;
+}
+
+pre.php {
+	background: #669;
+	color: #fff;
+	opacity: 0.8;
 }
 
 .demo p {
@@ -182,10 +206,6 @@ p code {
     margin-top: 5px;
 }
 
-.margin-bottom {
-	margin-bottom: 45px;
-}
-
 /* Styles to help article */
 
 .above-title .entry-dateline::before {
@@ -215,6 +235,7 @@ a.dateline {
 	color: rgba(26,26,26,.6);
 	margin-bottom: 30px;
 }
+
 .entry-header {
 	margin-bottom: 20px;
 }
@@ -225,8 +246,6 @@ a.dateline {
 }
 
 h1.entry-title {
-	font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size: 38px;
 	font-family: "adobe-garamond-pro";
 	font-size: 34px;
 	line-height: 1.2em;
@@ -242,7 +261,7 @@ h1.entry-title {
 }
 
 .entry-content-paragraf {
-	color: rgba(26,26,26,.9);
+	color: rgba(26,26,26,.6);
 	font-size: 24px;
 	letter-spacing: normal;
 	line-height: 1.45;
@@ -319,4 +338,24 @@ a:hover.commit-branch-name {
 .commit-branch:hover, .commit-branch:active {
 	max-width: inherit;
 	color: #fff;
+}
+
+@media screen and (max-width: 599px) {  
+  hr.style {
+	padding-left: 20px;
+	padding-right: 20px;
+	width: 90% !important;
+  }
+  
+  h1.entry-title {
+	font-family: "adobe-garamond-pro";
+	font-size: 30px;
+	line-height: 1em;
+  }
+  
+  .entry-content-paragraf {
+	color: rgba(26,26,26,.6);
+	font-size: 20px;
+	line-height: 1.35;
+  }
 }
