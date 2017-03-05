@@ -188,9 +188,10 @@ p code {
 
 /* Styles to help article */
 
-.above-title .entry-dateline::after {
+.above-title .entry-dateline::before {
     content: '\00B7';
     padding: 0 .5em;
+	font-weight: bold;
 }
 
 article header h1 a {
@@ -249,8 +250,39 @@ h1.entry-title {
 }
 
 .commit-branch-wrap {
+	display: inline-block;
 	max-width:690px;
 	position:relative;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: top;
+}
+
+a.commit-branch-name {
+	color: #0366d6;
+}
+a:hover.commit-branch-name {
+	opacity: 1;
+	text-decoration: underline;
+}
+
+.commit-branch-name {
+	display: inline-block;
+	padding: 2px 6px;
+	font: 12px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	color: rgba(27,31,35,0.6);
+	background-color: #E0F2F1;
+	border-radius: 3px;
+}
+
+.commit-branch-meta {
+	font-size: 12px;
+	line-height: 20px;
+	color: #959da5;
+}
+
+.commit-branch-muted-link {
+	color: #586069;
 }
 
 .commit-branch {
