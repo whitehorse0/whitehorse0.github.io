@@ -12,11 +12,17 @@
 	<meta http-equiv="Accept-CH" content="DPR, Width">
 	
 	<link rel="shortcut icon" type="image/x-icon" href="https://whitehorse0.github.io/favicon.ico">
-	<link rel="stylesheet" href="https://whitehorse0.github.io/assets/css/language-style.css">
+	<!-- <link rel="stylesheet" href="https://whitehorse0.github.io/assets/css/language-style.css">
 	<link rel="stylesheet" href="https://whitehorse0.github.io/assets/css/normalize.css">
 	<link rel="stylesheet" href="https://whitehorse0.github.io/assets/css/style.css">
 	<link rel="stylesheet" href="https://whitehorse0.github.io/assets/css/pills.css">
-	<script src="https://whitehorse0.github.io/assets/js/jquery.min.js"></script>
+	<script src="https://whitehorse0.github.io/assets/js/jquery.min.js"></script> -->
+
+	<link rel="stylesheet" href="http://localhost/github/whitehorse0.github.io/assets/css/language-style.css">
+	<link rel="stylesheet" href="http://localhost/github/whitehorse0.github.io/assets/css/normalize.css">
+	<link rel="stylesheet" href="http://localhost/github/whitehorse0.github.io/assets/css/style.css">
+	<link rel="stylesheet" href="http://localhost/github/whitehorse0.github.io/assets/css/pills.css">
+	<script src="http://localhost/github/whitehorse0.github.io/assets/js/jquery.min.js"></script>
 </head>
 <body>
 <header>
@@ -114,6 +120,88 @@
 										</pre>
 										No <code>function</code> or <code>return</code> keywords, sometimes not even needing to add <code>()</code> --
 										arrow functions are a great coding shortcut for simple functions.
+									</div>
+								</li>
+								<li>
+									<h3>find/findIndex</h3>
+									<div class="entry-content-paragraf">
+										JavaScript gives developers <code>Array.prototype.indexOf</code> to get the index of a given item within an array, but <code>indexOf</code> doesn't provide a method to calculate the desired item condition; you also need to search for an exact known value.  Enter <code>find</code> and <code>findIndex</code> -- two methods for searching an array for the first match of a calculated value:
+										<pre class=" language-js" prism="1">
+											<span class="token keyword">let</span> ages <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+											<span class="token keyword">let</span> firstAdult <span class="token operator">=</span> ages<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>age <span class="token operator">=</span><span class="token operator">&gt;</span> age <span class="token operator">&gt;=</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 19</span>
+											<span class="token keyword">let</span> firstAdultIndex <span class="token operator">=</span> ages<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span>age <span class="token operator">=</span><span class="token operator">&gt;</span> age <span class="token operator">&gt;=</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span>
+										</pre>
+										<code>find</code> and <code>findIndex</code>, through allowing a calculated value search, also prevent unnecessary side effects and looping through possible values!
+									</div>
+								</li>
+								<li>
+									<h3>The Spread Operator: <code>...</code> </h3>
+									<div class="entry-content-paragraf">
+										The spread operator signals that an array or iterable object should have its contents split into separate arguments within a call.  A few examples:
+										<pre class=" language-js" prism="1">
+											<span class="token comment" spellcheck="true">// Pass to function that expects separate multiple arguments</span>
+											<span class="token comment" spellcheck="true">// Much like Function.prototype.apply() does</span>
+											<span class="token keyword">let</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+											Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token operator">...</span>numbers<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span>
+
+											<span class="token comment" spellcheck="true">// Convert NodeList to Array</span>
+											<span class="token keyword">let</span> divsArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+											<span class="token comment" spellcheck="true">// Convert Arguments to Array</span>
+											<span class="token keyword">let</span> argsArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>arguments<span class="token punctuation">]</span><span class="token punctuation">;</span>
+										</pre>
+										The awesome added bonus is being able to convert iterable objects (<code>NodeList</code>, <code>arguments</code>, etc.) to true arrays -- something we've used <code>Array.from</code> or other hacks to do for a long time.
+									</div>
+								</li>
+								<li>
+									<h3>Template Literals</h3>
+									<div class="entry-content-paragraf">
+										Multiline strings within JavaScript were originally created by either concatenation or ending the line with a \ character, both of which can be difficult to maintain.   Many developers and even some frameworks started abusing <code>&#60;script&#62;</code> tags to encapsulate multiline templates, others actually created the elements with the DOM and used <code>outerHTML</code> to get the element HTML as a string.<br><br>
+
+										ES6 provides us template literals, whereby you can easily create multiline strings using backticks characters:
+										<pre class=" language-js" prism="1">
+											<span class="token comment" spellcheck="true">// Multiline String</span>
+											<span class="token keyword">let</span> myString <span class="token operator">=</span> <span class="token template-string"><span class="token string">`Hello
+
+											I'm a new line`</span></span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// No error!</span>
+
+											<span class="token comment" spellcheck="true">// Basic interpolation</span>
+											<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+											console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`Your total is: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>obj<span class="token punctuation">.</span>x <span class="token operator">+</span> obj<span class="token punctuation">.</span>y<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Your total is: 3</span>
+										</pre>
+										Of course template literals allow you to create more than multiline strings, like simple to advanced interpolation, but just the ability to create multiline strings elegantly puts a smile on my face.
+									</div>
+								</li>
+								<li>
+									<h3>Default Argument Values</h3>
+									<div class="entry-content-paragraf">
+										Providing default argument values in function signatures is an ability provided by many server-side languages like python and PHP, and now we have that ability within JavaScript:
+										<pre class=" language-js" prism="1">
+											<span class="token comment" spellcheck="true">// Basic usage</span>
+											<span class="token keyword">function</span> <span class="token function">greet</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">'Anon'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+											  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`Hello </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">!`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+											<span class="token punctuation">}</span>
+											<span class="token function">greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Hello Anon!</span>
+
+											<span class="token comment" spellcheck="true">// You can have a function too!</span>
+											<span class="token keyword">function</span> <span class="token function">greet</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">'Anon'</span><span class="token punctuation">,</span> callback <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+											  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`Hello </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">!`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+											  <span class="token comment" spellcheck="true">// No more "callback &amp;&amp; callback()" (no conditional)</span>
+											  <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+											<span class="token punctuation">}</span>
+
+											<span class="token comment" spellcheck="true">// Only set a default for one parameter</span>
+											<span class="token keyword">function</span> <span class="token function">greet</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> callback <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+										</pre>
+										Other languages may throw a warning if arguments without a default value aren't provided but JavaScript will continue to set those argument values to <code>undefined</code>.
+										<br>
+										<br>
+										The six features I've listed here are just a drop in the bucket of what ES6 provides developers but they're features we'll use frequently without thinking anything of it.  It's these tiny additions that oftentimes don't get attention but become core to our coding.
+										<br>
+										<br>
+										Did I leave anything out?  Let me know what small additions to JavaScript you love!
 									</div>
 								</li>
 							</ol>
