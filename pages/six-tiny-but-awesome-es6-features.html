@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Personal Blog</title>
+	<meta name="type" content="website">
+	<meta name="description" content="A blog featuring tutorials about JavaScript, HTML5, AJAX, PHP, CSS and everything else development.">
+	<meta name="url" content="https://whitehorse0.github.io/">
+	<meta name="site_name" content="Personal Blog">
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="Accept-CH" content="DPR, Width">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="https://whitehorse0.github.io/favicon.ico">
+	<link rel="stylesheet" href="https://whitehorse0.github.io/assets/css/language-style.css">
+	<link rel="stylesheet" href="https://whitehorse0.github.io/assets/css/normalize.css">
+	<link rel="stylesheet" href="https://whitehorse0.github.io/assets/css/style.css">
+	<link rel="stylesheet" href="https://whitehorse0.github.io/assets/css/pills.css">
+	<script src="https://whitehorse0.github.io/assets/js/jquery.min.js"></script>
+</head>
+<body>
+<header>
+	<div class="row">
+		<div class="two columns">
+			<h1 class="center-on-mobiles">White Horse</h1>
+		</div>
+		<div class="ten columns">
+			<nav class="nav-main">
+				<ul>
+					<li><a href="http://github.com/whitehorse0/">Github</a></li>
+					<!-- <li target="_blank" class="cta"><a href="#">Download</a></li> -->
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+<div class="cover-banner">
+	<!-- <h1 class='align-center'>Hello World</h1> -->
+</div>
+
+<section class="spotlight">
+	<div class="row">
+		<div class="twelve columns">
+			<h1>Stop Reading Articles That Tell You To Stop Doing Something.</h1>
+			<h2>
+				Lorem ipsum dolor sit amet, tota impetus mandamus sea ad,
+				ad ius discere oporteat. Homero doming quaerendum quo at.
+				<br> Vel hinc graeco no, et duo soluta omnesque delectus.
+			</h2>
+		</div>
+	</div>
+</section>
+
+<div class="sitewrapper">
+	<div class="row">
+		<h1 class="align-center">Six Tiny But Awesome ES6 Features</h1>
+		<div class="row">
+			<div class="nine column">
+				<article>
+					<header class="entry-header">
+						<div class="above-title">
+							Updated By WhiteHorse0
+							<div class="entry-dateline">
+								<a class="dateline">June 12, 2018</a>
+							</div>
+						</div>
+					</header>
+					<div class="entry-content">
+						<div class="entry-content-paragraf">
+							Everyone in the JavaScript community loves new APIs, syntax updates, and features -- they provide better, smarter, more efficient ways to accomplish important tasks.  ES6 brings forth a massive wave of new goodies and the browser vendors have worked hard over the past year to get those language updates into their browser.  While there are big updates, some of the smaller language updates have put a massive smile on my face; the following are six of my favorite new additions within the JavaScript language!
+
+							<ol>
+								<li>
+									<h3>Object [key] setting syntax</h3>
+									<div class="entry-content-paragraf">
+										One annoyance JavaScript developers have had for ages is not being able to set a variable key's value within an object literal declaration -- you had to add the key/value after original declaration:
+										<pre class=" language-js" prism="1">
+											<span class="token comment" spellcheck="true">// *Very* reduced example</span>
+											<span class="token keyword">let</span> myKey <span class="token operator">=</span> <span class="token string">'key3'</span><span class="token punctuation">;</span>
+											<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+											    <span class="code-space-3">key1</span><span class="token punctuation">:</span> <span class="token string">'One'</span><span class="token punctuation">,</span>
+											    <span class="code-space-3">key2<span class="token punctuation">:</span> <span class="token string">'Two'</span>
+											<span class="token punctuation">}</span><span class="token punctuation">;</span>
+											obj<span class="token punctuation">[</span>myKey<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'Three'</span><span class="token punctuation">;</span>
+										</pre>
+										At best this pattern is inconvenient and at worst it's confusing and ugly.  ES6 provides developers a way out of this mess:
+										<pre class=" language-js" prism="1">
+											<span class="token keyword">let</span> myKey <span class="token operator">=</span> <span class="token string">'variableKey'</span><span class="token punctuation">;</span>
+											<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+											    <span class="code-space-3">key1</span> <span class="token punctuation">:</span> <span class="token string">'One'</span><span class="token punctuation">,</span>
+											    <span class="code-space-3">key2</span> <span class="token punctuation">:</span> <span class="token string">'Two'</span><span class="token punctuation">,</span>
+											    <span class="token punctuation code-space-3">[</span>myKey<span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'Three'</span> <span class="token comment" spellcheck="true">/* yay! */</span>
+											<span class="token punctuation">}</span><span class="token punctuation">;</span>
+										</pre>
+										Wrapping the variable key in <code>[]</code> allows developers to get everything done within one statement!
+									</div>
+								</li>
+								<li>
+									<h3>Arrow Functions</h3>
+									<div class="entry-content-paragraf">
+										You don't need to have kept up with every ES6 change to know about arrow functions --
+										they've been the source of much talk and some confusion (at least initially) to JavaScript
+										developers.  While I could write multiple blog posts to explain each facet of the arrow
+										function, I want to point out how arrow functions provide a method for condensed code fo
+										simple functions:
+										<pre class=" language-js" prism="1">
+											<span class="token comment" spellcheck="true">// Adds a 10% tax to total</span>
+											<span class="token keyword">let</span> calculateTotal <span class="token operator">=</span> total <span class="token operator">=</span><span class="token operator">&gt;</span> total <span class="token operator">*</span> <span class="token number">1.1</span><span class="token punctuation">;</span>
+											<span class="token function">calculateTotal</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 11</span>
+
+											<span class="token comment" spellcheck="true">// Cancel an event -- another tiny task</span>
+											<span class="token keyword">let</span> brickEvent <span class="token operator">=</span> e <span class="token operator">=</span><span class="token operator">&gt;</span> e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+											document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> brickEvent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+										</pre>
+										No <code>function</code> or <code>return</code> keywords, sometimes not even needing to add <code>()</code> --
+										arrow functions are a great coding shortcut for simple functions.
+									</div>
+								</li>
+							</ol>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="three column">
+				<pre class="javascript">.javascript</pre>
+				<span class="commit-branch-wrap">
+					<a href="https://github.com/whitehorse0/whitehorse0.github.io" class="commit-branch-name">Master</a>
+					<span class="commit-branch-meta">
+						Updated 12 hours ago by 
+						<a href="https://github.com/whitehorse0/" class="commit-branch-muted-link">whitehorse0</a>
+					</span>
+					<!-- <a href="" class="commit-branch">david-walsh-test-branch-name</a> -->
+				</span>
+			</div>
+		</div>
+		<hr class="style"/>
+	</div>
+</div>
+<footer>
+	<div class="row">
+		<div class="column half">
+			<div class="center-on-mobiles">
+				<p>© EkaPutra — All rights reserved.</p>
+			</div>
+		</div>
+		<div class="column half">
+			<div class="align-right center-on-mobiles">
+				<p>This project is open-source and accepting pull&nbsp;requests. Fork&nbsp;at&nbsp;will.</p>
+			</div>
+		</div>
+	</div>
+</footer>
+</body>
+</html>
+
